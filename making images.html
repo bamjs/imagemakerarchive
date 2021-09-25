@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="script.js" type="text/javascript"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
+</head>
+<script>
+    function editing(){
+    var rama ;
+    var rama1 ;
+    var rama2 ;
+    var rama3 ;
+
+    rama = document.getElementById('firsttag').value;
+    console.log(rama)
+    document.getElementById('name1').innerHTML = rama 
+    rama2 = document.getElementById('secondtag').value;
+    console.log(rama2)
+    document.getElementById('name2').innerHTML = rama2 ;
+    rama3 = document.getElementById('thirdtag').value;
+    console.log(rama3)
+    document.getElementById('name3').innerHTML = rama3 ;
+    rama4 = document.getElementById('fouthtag').value;
+    console.log(rama4)
+    document.getElementById('name4').innerHTML = rama4 ;
+
+}
+</script>
+<body>
+
+    <div class="container" >
+    <div class="row">
+    <div class="textinput col-2">
+        
+       <input type="text" id="firsttag"><br>
+       <input type="text" id="secondtag"><br>
+    <input type="text" id="thirdtag"><br>
+       <input type="text" id="fouthtag"><br>
+        </ul>
+        <button onclick="editing()"> click here</button>
+    </div>
+    <div class="output1 col-9" >
+        <ul>
+            <li><p id="name1"></p></li>
+            <li><p id="name2"></p></li>
+            <li><p id="name3"></p></li>
+            <li><p id="name4"></p></li>
+    </ul>
+
+
+       
+<div class="output1 " style="font-family:;">
+
+</div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

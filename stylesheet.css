@@ -1,0 +1,15 @@
+.output1{
+    background-color: rgb(215, 218, 195);
+    min-width: 1080px;
+    min-height: 1080px;
+    font-family: 'Ramabhadra', sans-serif;
+    margin-top: 100px;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.textinput{
+    float: left;
+}
