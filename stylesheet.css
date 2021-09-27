@@ -13,3 +13,11 @@
 .textinput{
     float: left;
 }
+.Background_image{
+    position:relative;
+    width: 400px;
+    height: 400px;
+    padding: 200px;
+    padding-left: 200px;
+    padding-top: 200px;
+}
