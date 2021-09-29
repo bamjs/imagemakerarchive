@@ -25,109 +25,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 
 
 </head>
-<script>
-    var heightpx = document.getElementById('idheight') + "px";
-    var widthpx = document.getElementById('idwidth') + "px";
 
-    function editing() {
-        var rama;
-        var rama1;
-        var rama2;
-        var rama3;
-
-
-        rama = document.getElementById('firsttag').value;
-        console.log(rama)
-        document.getElementById('name1').innerHTML = rama
-        rama2 = document.getElementById('secondtag').value;
-        console.log(rama2)
-        document.getElementById('name2').innerHTML = rama2;
-        rama3 = document.getElementById('thirdtag').value;
-        console.log(rama3)
-        document.getElementById('name3').innerHTML = rama3;
-        rama4 = document.getElementById('fouthtag').value;
-        console.log(rama4)
-        document.getElementById('name4').innerHTML = rama4;
-
-    }
-    function saveas() {
-        domtoimage.toBlob(document.getElementById('imagedownload')).then(function (blob) {
-            window.saveAs(blob, "platoimage.png")
-        });
-    }
-    function previewimage(event,inputId,parentId) {
-
-        var image = URL.createObjectURL(event.target.files[0]);
-        inputimage = document.getElementById(inputId);
-        inputimage.src = ""
-        inputimage.src = image;
-        divPreview = document.getElementById(parentId);
-        divPreview.appendChild(inputimage);
-    }
-    function createNewInput() {
-
-        var newInput = document.createElement("input")
-        var newBreak = document.createElement("br")
-        console.log(newInput);
-
-        var inputField = document.getElementById('inputForm');
-        inputField.appendChild(newInput);
-        inputField.appendChild(newBreak);
-
-    }
-
-
-
-
-</script>
 
 <body>
 
     <div class="container">
-        <div>
-            <div class="textinput " id="inputForm">
-
-                <input type="text" id="firsttag"><br>
-                <input type="text" id="secondtag"><br>
-                <input type="text" id="thirdtag"><br>
-                <input type="text" id="fouthtag"><br>
+        <div class="row">
+            <div class="textinput col-3" id="inputForm">
+                <input type="text" id="firstInput" class="inputFieldBtn" placeholder="Enter Text Here "><br>
             </div>
-            <button type="button" id="createinput" onclick="createNewInput()">+</button>
-            <label for="height">Height</label><input type="text" name="height" id="idheight" accept="number">
-            <label for="width">width</label><input type="text" name="width" id="idwidth">
-            <input type="file" name="inpimage" id="inpimage" accept="image/*" onchange="previewimage(event,'inpimage','inputimage')">
-            <!-- <input type="file" name="bgimage" id="bgimage" accept="image/*" onchange="previewimage(event,bgimage,backgroundImage)"> -->
+            <button type="button" id="createinput" onclick="createNewInput()" class="button col-2">Click Here To Add New
+                Form
+                +</button>
+            <label for="height" class="col-1">Height</label>
+            <input type="number" name="height" id="idheight" accept="number" class="inputFieldBtn col-2">
+            <label for="width" class="col-1">width</label>
+            <input type="number" name="width" id="idwidth" class="inputFieldBtn col-2">
+            <input type="color" id="colorid">
+            <input type="file" name="inpimage" id="inpimage" accept="image/*" class="button"
+                onchange="previewimage(event,'inputimage','imagePreview')">
+            <input type="file" name="bgimage" id="bgimage" accept="image/*" class="button"
+                onchange="previewimage(event,'backgroundImage','backgroundImg')">
             </ul>
-            <button onclick="editing()"> click here</button>
-            <button onclick="saveas()">download </button>
+            <button onclick="editing()" class="button"> click here</button>
+            <button onclick="saveas()" class="button">download </button>
+            <button onclick="preview()" class="button">preview</button>
         </div>
+        <!-- <canvas id="mycanvas"> -->
         <div class="output1 col-9" id="divPreview">
-            <ul>
-                <img src="" alt="" id="inputimage">
-                <img src="1.jpg" alt="" id="backgroundImage" class="Background_image" >
+            <div id="imagePreview"><img src="" alt="" id="inputimage"></div>
+            <div id="backgroundImg"><img src="" alt="" id="backgroundImage" class="Background_image"></div>
+            <ul id="outputList" style="list-style-type: none;">
                 <li>
-                    <p id="name1"></p>
-                </li>
-                <li>
-                    <p id="name2"></p>
-                </li>
-                <li>
-                    <p id="name3"></p>
-                </li>
-                <li>
-                    <p id="name4"></p>
+                    <p id="firstOutput" class="">vzcvxbxvnnxnx</p>
                 </li>
             </ul>
-
-
-
         </div>
+        <img src="" id="convertedImage" alt="">
+        </canvas>
     </div>
     </div>
-
     </div>
 </body>
 
