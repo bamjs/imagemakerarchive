@@ -44,20 +44,21 @@
                 <label for="color" class="col-1">Set Color</label>
                 <input type="color" id="colorid">
                 <label for="padding" class="col-2">Padding</label>
-                <input type="range" min="30" max="300" id="paddingid" class="col-2" onchange="changepadding()">
+                <input type="range" min="30" max="300" id="paddingid" class="col-2" onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
                 <label for="width" class="col-1">width</label>
-                <input type="range" min="30" max="1000" id="widthid" class="col-2" onchange="changedim()">
+                <input type="range" min="30" max="1000" id="widthid" class="col-2" onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
                 <label for="height" class="col-1">Height</label>
-                <input type="range" min="30" max="1000" id="heightid" class="col-2" onchange="changedim()">
+                <input type="range" min="30" max="1000" id="heightid" class="col-2" onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
             </div>
             <input type="file" name="inpimage" id="inpimage" accept="image/*" class="button"
-                onchange="previewimage(event,'inputimage','imagePreview')">
+                onchange="previewimage(event,'inputimage','imagePreview','firstImage')">
             <input type="file" name="bgimage" id="bgimage" accept="image/*" class="button"
-                onchange="previewimage(event,'backgroundImage','backgroundImg')">
+                onchange="previewimage(event,'backgroundImage','backgroundImg','backgroundImage')">
             </ul>
             <button onclick="editing()" class="button"> click here</button>
             <button onclick="saveas()" class="button">download </button>
             <button onclick="preview()" class="button">preview</button>
+            <button onclick="editingImages()" class="button" id="secondImageEditing">  second image</button>
         </div>
         <!-- <canvas id="mycanvas"> -->
         <div class="output1 " id="divPreview">

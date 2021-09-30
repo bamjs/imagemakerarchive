@@ -53,12 +53,14 @@ function preview() {
     }
 //     }
 
-function previewimage(event, inputId, parentId) {
+function previewimage(event, inputId, parentId,imageId) {
        let image = URL.createObjectURL(event.target.files[0]);
     console.log(image)
     inputimage = document.getElementById(inputId);
-    inputimage.src = ""
+    // inputimage.src = ""
     inputimage.src = image;
+    inputimage.id = imageId;
+    console.log(inputimage);
     console.log(inputimage);
       divPreview = document.getElementById(parentId);
     divPreview.appendChild(inputimage);
@@ -96,17 +98,68 @@ newPadding = padding + "px";
 
 inputimage.style.paddingLeft = newPadding;
 }
-function changedim(){
-    let height = document.getElementById("heightid").value;
-    let width = document.getElementById("widthid").value;
+function changedim(image,heightd,widthd,paddingg){
+    let height = document.getElementById(heightd).value;
+    let width = document.getElementById(widthd).value;
+    var padding = document.getElementById(paddingg).value;
+console.log(padding);
+newPadding = padding + "px";
+
+image.style.paddingLeft = newPadding;
     newHeight = height + "px";
     console.log(newHeight);
     
     newWidth = width + "px";
     console.log(newWidth);
-    inputimage.style.height = newHeight;
+    image.style.height = newHeight;
     
-    inputimage.style.width = newWidth;
-    console.log(inputimage);
+    image.style.width = newWidth;
+    console.log(image);
 
 }
+function editingImage(paddingId){
+   var padslider = document.createElement("input");
+   var paddingId
+   var sdimage = document.getElementById("backgroundImage")
+   padslider.setAttribute("min","30");
+   padslider.setAttribute("max","500")
+   padslider.id = paddingId;
+//    padslider.setAttribute('onchange',"changedim(sdimage,`heightd`,`widthd`,`paddingg`)")
+   console.log(paddingId);
+   padslider.type ="range"
+   console.log(padslider);
+   var inputField = document.getElementById('inputForm');
+   inputField.appendChild(padslider);
+   padslider.addEventListener("change",function(){changedim(sdimage,`seconImgHeight`,`seconImgHeight`,`seconImgPadding`)})
+//    var paddingValue = document.getElementById(`seconImgPadding`).value;
+//    newPaddingValue = paddingValue+"px" 
+//    var secondImage = document.getElementById(`backgroundImage`);
+//    secondImage.style.paddingLeft = newPaddingValue;
+
+
+//    var i =0;
+// do {
+  
+// } while (i==1);
+
+// while (i<2) {  editingImage("secondImgHeight");
+// editingImage("secondImgWidth");
+//     i=i+1;
+// }
+  
+
+      
+//   }  editingImage("seconImgPadding");
+//    editingImage("seconImgHeight");
+//    editingImage("seconImgWidth");
+}
+function editingImages(){
+    editingImage("seconImgPadding");
+   editingImage("seconImgHeight");
+   editingImage("seconImgWeight");
+
+}
+
+
+// var secondImageEditingg = document.getElementById(`secondImageEditing`);
+// secondImageEditingg.addEventListener("click",function(){editingImage("seconImgPadding")})
