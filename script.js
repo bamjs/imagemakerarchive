@@ -119,3 +119,10 @@ function createNewInput() {
     outputList.appendChild(newOutput);
 
 }
+ function changepadding(){
+var padding = document.getElementById("paddingid").value;
+console.log(padding);
+newPadding = ` + padding `+ "px";
+
+inputimage.style.setAttribute =("padding-left",newPadding)
+}

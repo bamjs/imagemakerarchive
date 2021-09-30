@@ -22,6 +22,9 @@
     
     
 }
+#divPreview{
+    align-items: center;
+}
 label{
     border-radius: 10px;
     background-color: lightgoldenrodyellow;
@@ -70,6 +73,9 @@ margin: 3px;}
     width: 400px;
     height: 400px;
     align-items: center;
+    padding-left: 300px;
+    padding-top: -30px;
+    ;
     
     /* display: none; */
 }

@@ -46,6 +46,7 @@
             <label for="width" class="col-1">width</label>
             <input type="number" name="width" id="idwidth" class="inputFieldBtn col-2">
             <input type="color" id="colorid">
+            <input type="range" min="30" max="500" id="paddingid" onchange="changepadding()">
             <input type="file" name="inpimage" id="inpimage" accept="image/*" class="button"
                 onchange="previewimage(event,'inputimage','imagePreview')">
             <input type="file" name="bgimage" id="bgimage" accept="image/*" class="button"
