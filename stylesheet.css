@@ -11,6 +11,9 @@
     font-weight: bold;
     align-items: center;
 }
+.inputField{
+    background-color: rgb(165, 165, 84);
+}
 .inputFieldBtn{
     border: rgb(228, 101, 17) solid;
     border-radius: 20px;
@@ -18,9 +21,18 @@
     width: 250px;
     height: 50px;
     text-shadow: rgb(224, 204, 224);
+    
 
     
     
+}
+.sliders{
+    padding-left: 150px;
+    border: brown 2px solid;
+    border-left: none;
+    margin-left: 150px;
+    background-color: cornsilk;
+    border-radius: 50px;
 }
 #divPreview{
     align-items: center;
@@ -34,6 +46,7 @@ label{
     text-align: center;
     border:lightslategray solid 2px;
     font-weight: bolder;
+    margin-top: 10px;
 }
 .button{
     border-radius: 5px;
@@ -66,15 +79,15 @@ margin: 3px;}
 }
 .displayimage{
     display: block;
-    width: 400px;
-    height: 400px;
+    /* width: 400px;
+    height: 400px; */
 } 
 #inputimage{
-    width: 400px;
+    width: 600px;
     height: 400px;
     align-items: center;
-    padding-left: 300px;
-    padding-top: -30px;
+    /* /* padding-left: 300px; */
+    padding-top: 30px; 
     ;
     
     /* display: none; */

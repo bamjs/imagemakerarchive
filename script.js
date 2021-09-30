@@ -122,7 +122,21 @@ function createNewInput() {
  function changepadding(){
 var padding = document.getElementById("paddingid").value;
 console.log(padding);
-newPadding = ` + padding `+ "px";
+newPadding = padding + "px";
 
-inputimage.style.setAttribute =("padding-left",newPadding)
+inputimage.style.paddingLeft = newPadding;
+}
+function changedim(){
+    let height = document.getElementById("heightid").value;
+    let width = document.getElementById("widthid").value;
+    newHeight = height + "px";
+    console.log(newHeight);
+    
+    newWidth = width + "px";
+    console.log(newWidth);
+    inputimage.style.height = newHeight;
+    
+    inputimage.style.width = newWidth;
+    console.log(inputimage);
+
 }
