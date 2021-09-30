@@ -1,13 +1,3 @@
-// function editing(){
-//     var rama 
-//     rama = document.getElementsById('firsttag').value;
-//     console.log(rama)
-//     rama.style.fontFamily = ramabadhra
-//     document.getElementsById("output1").innerHtml = rama
-// }
-
-
-
 function editing() {
     var rama;
     rama = document.getElementById('firstInput').value;
@@ -22,9 +12,7 @@ function editing() {
     
     let divimage = document.getElementById("divPreview")
     divimage.style.backgroundColor = bgcolors;
-    var idNum = "id" + idno;
-    console.log(idNum);
-    rama = document.getElementById(idNum).value;
+        rama = document.getElementById(idNum).value;
     console.log(rama)
     document.getElementById(idOut).innerHTML = rama
    
@@ -35,13 +23,12 @@ function saveas() {
     // domtoimage.toBlob(document.getElementById('divPreview')).then(function (blob) {
     //     window.saveAs(blob, "platoimage.png")
     // });
+   
     html2canvas(document.querySelector("#divPreview")).then(canvas => {
-        document.body.appendChild(canvas);
-        canvas.id = "mycanvas";
-        let mycanvas = document.getElementById('mycanvas');
-    let convertedImage = document.getElementById('convertedImage')
-    const dataURI = mycanvas.toDataURL('image/jpeg');
-    convertedImage.src = dataURI;
+        document.body.appendChild(canvas)
+        console.log(canvas);
+        canvas.id = "mycanvas"
+    //    
     
 
     if (window.navigator.msSaveBlob) {
@@ -53,44 +40,27 @@ function saveas() {
         a.download = "imagecan.png";
         a.click();
         document.removeChild(a);
-    }
-     })
+        
+    }});
     
 
 }
 function preview() {
-        html2canvas(document.querySelector("#divPreview")).then(canvas => {
-            document.body.appendChild(canvas);
-            canvas.id = "mycanvas"
+                html2canvas(document.querySelector("#divPreview")).then(canvas => {
+            document.body.appendChild(canvas)
             console.log(canvas);
-           
-          
-            let mycanvas = document.getElementById('mycanvas');
-            let convertedImage = document.getElementById('convertedImage')
-            const dataURI = mycanvas.toDataURL('image/jpeg');
-            convertedImage.src = dataURI;
-            console.log(convertedImage);
         });
     }
 //     }
 
 function previewimage(event, inputId, parentId) {
-    var heightpx = document.getElementById('idheight') + "px";
-    var widthpx = document.getElementById('idwidth') + "px";
-    console.log(heightpx)
-    var image = URL.createObjectURL(event.target.files[0]);
+       let image = URL.createObjectURL(event.target.files[0]);
     console.log(image)
     inputimage = document.getElementById(inputId);
     inputimage.src = ""
     inputimage.src = image;
     console.log(inputimage);
-    inputimage.setAttribute("class","displayimage") ;
-    console.log(inputimage);
-    // console.log(widthpx);
-    // inputimage.setAttribute("style,height:200px");
-    // inputimage.style.height = heightpx;
-    // console.log(inputimage)
-    divPreview = document.getElementById(parentId);
+      divPreview = document.getElementById(parentId);
     divPreview.appendChild(inputimage);
     console.log(divPreview)
 }
