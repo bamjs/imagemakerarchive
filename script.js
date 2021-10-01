@@ -138,7 +138,7 @@ function editingImage(paddingId){
    console.log(padslider);
    var inputField = document.getElementById('inputForm');
    inputField.appendChild(padslider);
-   padslider.addEventListener("change",function(){changedim(sdimage,`seconImgHeight`,`seconImgHeight`,`seconImgPadding`)})
+   padslider.addEventListener("change",function(){changedim(sdimage,`seconImgHeight`,`seconImgWidth`,`seconImgPadding`)})
 //    var paddingValue = document.getElementById(`seconImgPadding`).value;
 //    newPaddingValue = paddingValue+"px" 
 //    var secondImage = document.getElementById(`backgroundImage`);
@@ -164,7 +164,7 @@ function editingImage(paddingId){
 function editingImages(){
     editingImage("seconImgPadding");
    editingImage("seconImgHeight");
-   editingImage("seconImgWeight");
+   editingImage("seconImgWidth");
    console.log(outidlist);
 
 }
