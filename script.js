@@ -172,3 +172,9 @@ function editingImages(){
 
 // var secondImageEditingg = document.getElementById(`secondImageEditing`);
 // secondImageEditingg.addEventListener("click",function(){editingImage("seconImgPadding")})
+// imageBeside = document.getElementById("imageBeside");
+// imageBeside.addEventListener("click",()=>{
+    function addClass(){
+    imageMerge = document.getElementById("imageMerge");
+    imageMerge.classList="row"
+} 
