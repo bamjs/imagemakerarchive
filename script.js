@@ -12,9 +12,13 @@ function editing() {
     
     let divimage = document.getElementById("divPreview")
     divimage.style.backgroundColor = bgcolors;
+       
+    for (let j = 0; j < outidlist.length; j++) {
+        const element = outidlist[j];
         rama = document.getElementById(idNum).value;
-    console.log(rama)
-    document.getElementById(idOut).innerHTML = rama
+        document.getElementById(element).innerHTML = rama
+        
+    }
    
 
 
@@ -69,6 +73,7 @@ function previewimage(event, inputId, parentId,imageId) {
 
 
 var idno = 0;
+var outidlist = [];
 function createNewInput() {
 
     var newInput = document.createElement("input")
@@ -81,6 +86,9 @@ function createNewInput() {
     console.log(newInput);
     newOutput.setAttribute("id", idOut);
     console.log(newOutput);
+
+outidlist.push(idOut) ;
+console.log(outidlist);
 
     var inputField = document.getElementById('inputForm');
     newInput.classList="inputFieldBtn";
@@ -157,6 +165,7 @@ function editingImages(){
     editingImage("seconImgPadding");
    editingImage("seconImgHeight");
    editingImage("seconImgWeight");
+   console.log(outidlist);
 
 }
 
