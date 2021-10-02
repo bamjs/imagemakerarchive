@@ -18,7 +18,7 @@
     border: rgb(228, 101, 17) solid;
     border-radius: 20px;
     margin-bottom: 5px;
-    width: 250px;
+    width: 500px;
     height: 50px;
     text-shadow: rgb(224, 204, 224);
     
@@ -61,6 +61,7 @@ margin: 3px;}
 
 .textinput{
     float: left;
+    
 
 }
 /* .Background_image{
@@ -91,4 +92,15 @@ margin: 3px;}
     ;
     
     /* display: none; */
+}
+#firstHeader{
+    background-color: rgb(235, 111, 54);
+}
+#oneImage{
+    width: 50%;
+    float: left;
+}
+#secondImage{
+    width: 50%;
+    float: right;
 }

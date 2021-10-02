@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script> -->
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
@@ -33,40 +33,56 @@
 <body>
 
     <div class="container">
-        <div class="row inputField">
-            <div class="textinput col-3" id="inputForm">
-                <input type="text" id="firstInput" class="inputFieldBtn" placeholder="Enter Text Here "><br>
+        <div class="container inputField">
+            <div id="firstHeader" class="row">
+                <div class="textinput col-6" id="inputForm">
+                    <input type="text" id="firstInput" class="inputFieldBtn" placeholder="Enter Text Here "><br>
+                </div>
+                <div class=" col-5"><button type="button" id="createinput" class="button"
+                        onclick="createNewInput()">Click Here To Add New
+                        Form
+                        +</button></div>
             </div>
-            <button type="button" id="createinput" onclick="createNewInput()" class="button col-2">Click Here To Add New
-                Form
-                +</button>
             <div class="row sliders">
                 <label for="color" class="col-1">Set Color</label>
                 <input type="color" id="colorid">
-                <label for="padding" class="col-2">Padding</label>
-                <input type="range" min="30" max="300" id="paddingid" class="col-2" onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
-                <label for="width" class="col-1">width</label>
-                <input type="range" min="30" max="1000" id="widthid" class="col-2" onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
-                <label for="height" class="col-1">Height</label>
-                <input type="range" min="30" max="1000" id="heightid" class="col-2" onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
+
+
             </div>
-            <input type="file" name="inpimage" id="inpimage" accept="image/*" class="button"
-                onchange="previewimage(event,'inputimage','imagePreview','firstImage')">
-            <input type="file" name="bgimage" id="bgimage" accept="image/*" class="button"
-                onchange="previewimage(event,'backgroundImage','backgroundImg','backgroundImage')">
+            <div id="oneImage" class="container">
+                <input type="file" name="inpimage" id="inpimage" accept="image/*" class="button row"
+                    onchange="previewimage(event,'inputimage','imagePreview')">
+                <label for="padding" class="col-2">Padding</label>
+                <input type="range" min="30" max="300" id="paddingid" class="col-2"
+                    onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
+                <label for="width" class="col-1">width</label>
+                <input type="range" min="30" max="600" id="widthid" class="col-2"
+                    onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
+                <label for="height" class="col-1">Height</label>
+                <input type="range" min="30" max="600" id="heightid" class="col-2"
+                    onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
+            </div>
+
+            <div id="secondImage" class="container">
+                <input type="file" name="bgimage" id="bgimage" accept="image/*" class="button"
+                    onchange="previewimage(event,'backgroundImage','backgroundImg')">
+            </div>
+
             </ul>
             <button onclick="editing()" class="button"> click here</button>
             <button onclick="saveas()" class="button">download </button>
             <button onclick="preview()" class="button">preview</button>
-            <button onclick="editingImages()" class="button" id="secondImageEditing">  second image</button>
-            <button id="imageBeside" onclick="addClass()"></button>
+            <button onclick="editingImages()" class="button" id="secondImageEditing"> second image</button>
+            <button id="makebackground" class="button" onclick="makeBackGround()">click here to add background </button>
+            <button id="imageBeside" onclick="addClass()" class="button">add</button>
         </div>
         <!-- <canvas id="mycanvas"> -->
-            
+
         <div class="output1 container " id="divPreview">
             <div id="imageMerge">
-            <div id="imagePreview"><img src="" alt="" id="inputimage"></div>
-            <div id="backgroundImg"><img src="" alt="" id="backgroundImage" class="Background_image"></div></div>
+                <div id="imagePreview"><img src="" alt="" id="inputimage"></div>
+                <div id="backgroundImg"><img src="" alt="" id="backgroundImage" class="Background_image"></div>
+            </div>
             <ul id="outputList" style="list-style-type: none;">
                 <li>
                     <p id="firstOutput" class="">vzcvxbxvnnxnx</p>
@@ -74,7 +90,7 @@
             </ul>
         </div>
         <img src="" id="convertedImage" alt="">
-        
+
     </div>
     </div>
     </div>
