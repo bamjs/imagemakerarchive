@@ -142,18 +142,18 @@ function changedim(image, heightd, widthd, paddingg) {
     console.log(image);
 
 }
-function editingImage(paddingId,labelId) {
-    var labelId ;
+function editingImage(paddingId,labelIds) {
+    
     var padslider = document.createElement("input");
     var labels = document.createElement("label");
+    console.log(labelIds);
     console.log(labels);
-    
-    console.log(labels);
+    var labelIds ;
     var paddingId
     var sdimage = document.getElementById("backgroundImage")
     padslider.setAttribute("min", "0");
     padslider.setAttribute("max", "600")
-    labels.id = labelId;
+    labels.id = labelIds;
     padslider.id = paddingId;
     //    padslider.setAttribute('onchange',"changedim(sdimage,`heightd`,`widthd`,`paddingg`)")
     console.log(paddingId);

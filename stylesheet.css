@@ -13,6 +13,10 @@
 }
 .inputField{
     background-color: rgb(165, 165, 84);
+    margin-top: -5px;
+    border-radius: 20px;
+    border: brown 2px double;
+
 }
 .inputFieldBtn{
     border: rgb(228, 101, 17) solid;
@@ -37,47 +41,38 @@
 #divPreview{
     align-items: center;
 }
-label{
-    border-radius: 10px;
-    background-color: lightgoldenrodyellow;
+/* label{
+    border-radius: 5px;
+    background-color: rgb(206, 182, 159);
     height: 25px;
     vertical-align: middle;
-    width: 100px;
-    text-align: center;
+text-align: justify;
+width: max-content;
     border:lightslategray solid 2px;
     font-weight: bolder;
     margin-top: 10px;
-}
+} */
 .button{
     border-radius: 5px;
-    color: orangered;
-    background-color: rgb(182, 240, 182);
+    color: rgb(8, 3, 1);
+    background-color: rgb(9, 45, 248);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 font-weight: bolder;
 size: 200px;
-border: rgb(156, 15, 15) solid 2px;
+border: rgb(147, 214, 70) solid 2px;
 padding: 2px;
-margin: 3px;}
+margin: 3px;
+color: whitesmoke;
+text-align: center;
+
+}
 
 .textinput{
     float: left;
     
 
 }
-/* .Background_image{
-    position:relative;
-    width: 400px;
-    height: 400px;
-    padding: 200px;
-    padding-left: 200px;
-    padding-top: 200px;
-} */
-/* #mycanvas{
-    display: none;
-}
- #hideimage{
-    display: none;
-} */
+
 .displayimage{
     
     /* width: 400px;
@@ -95,12 +90,58 @@ margin: 3px;}
 }
 #firstHeader{
     background-color: rgb(235, 111, 54);
+    border-radius: 20px;
+    margin : 3px;
+    border: brown dotted;
 }
 #oneImage{
-    width: 50%;
+    width: 49%;
     float: left;
+    border-radius: 4px;
+    background-color: rgb(201, 150, 175);
+    lighting-color: honeydew;
+    border: rgb(26, 22, 22) solid 2px;
+    box-shadow: brown;
+    margin: 3px;
+    height: 200px;
+    align-items: center;
+    
+    
 }
 #secondImage{
-    width: 50%;
+    width: 49%;
     float: right;
+    border-radius: 4px;
+    background-color: rgb(201, 150, 175);
+    lighting-color: honeydew;
+    border: rgb(26, 22, 22) solid 2px;
+    box-shadow: brown;
+    height: 200px;
+    margin: 3px;
+    
+
+}
+#workingOut{
+    width: 100%; 
+    padding-left: 200px;
+    align-content: center;
+    align-items: center;
+    border: double grey;
+    background-color: rgb(9, 88, 9);
+
+    
+}
+#getOutput{
+    width: 100%;
+    padding-left: 400px;
+    background-color: rgb(112, 223, 112);
+    border-radius: 20px;
+    padding-right: -20px;
+}
+#header{
+    text-align: center;
+    text-emphasis-color: red;
+    font-weight: bolder;
+    background-color: chartreuse;
+    
 }

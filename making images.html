@@ -31,7 +31,9 @@
 
 
 <body>
-
+<div class="header" id="header">
+   <h1>Image Editor</h1> 
+</div>
     <div class="container">
         <div class="container inputField">
             <div id="firstHeader" class="row">
@@ -43,23 +45,18 @@
                         Form
                         +</button></div>
             </div>
-            <div class="row sliders">
-                <label for="color" class="col-1">Set Color</label>
-                <input type="color" id="colorid">
 
-
-            </div>
             <div id="oneImage" class="container">
                 <input type="file" name="inpimage" id="inpimage" accept="image/*" class="button row"
                     onchange="previewimage(event,'inputimage','imagePreview')">
-                <label for="padding" class="col-2">Padding</label>
-                <input type="range" min="30" max="300" id="paddingid" class="col-2"
+                <label for="padding" class="col-3 button">Padding</label>
+                <input type="range" min="30" max="300" id="paddingid" class="col-6"
                     onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
-                <label for="width" class="col-1">width</label>
-                <input type="range" min="30" max="600" id="widthid" class="col-2"
+                <label for="width" class="col-3 button">Width</label>
+                <input type="range" min="30" max="600" id="widthid" class="col-6"
                     onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
-                <label for="height" class="col-1">Height</label>
-                <input type="range" min="30" max="600" id="heightid" class="col-2"
+                <label for="height" class="col-3 button">Height</label>
+                <input type="range" min="30" max="600" id="heightid" class="col-6"
                     onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
             </div>
 
@@ -69,16 +66,25 @@
             </div>
 
             </ul>
-            <button onclick="editing()" class="button"> click here</button>
-            <button onclick="saveas()" class="button">download </button>
-            <button onclick="preview()" class="button">preview</button>
-            <button onclick="editingImages()" class="button" id="secondImageEditing"> second image</button>
-            <button id="makebackground" class="button" onclick="makeBackGround()">click here to add background </button>
-            <button id="imageBeside" onclick="addClass()" class="button">add</button>
-        </div>
-        <!-- <canvas id="mycanvas"> -->
+            <div class="container" id="workingOut">
+                
+               
+                    <button onclick="preview()" class="button ">Preview Image</button>
+                    <!-- <button onclick="editingImages()" class="button" id="secondImageEditing"> second image</button> -->
+                    <button id="makebackground" class="button" onclick="makeBackGround()">Add Background
+                    </button>
+                    <button id="imageBeside" onclick="addClass()" class="button">Merge Images</button>
+                    <label for="color" class="label ">Select background Color</label>
+                    <input type="color" id="colorid">
+             
+            </div>
+            <div class="row" id="getOutput">
+                <button onclick="editing()" class="button">Make Changes</button>
+                <button onclick="saveas()" class="button">Download </button>
+            </div>
 
-        <div class="output1 container " id="divPreview">
+        </div>
+             <div class="output1 container " id="divPreview">
             <div id="imageMerge">
                 <div id="imagePreview"><img src="" alt="" id="inputimage"></div>
                 <div id="backgroundImg"><img src="" alt="" id="backgroundImage" class="Background_image"></div>
