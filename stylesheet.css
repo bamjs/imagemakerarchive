@@ -1,3 +1,6 @@
+body{
+    background-color: darkblue;
+}
 .output1{
     background-color: rgb(152, 170, 32);
     min-width: 1080px;
@@ -134,7 +137,7 @@ text-align: center;
 #getOutput{
     width: 100%;
     padding-left: 400px;
-    background-color: rgb(112, 223, 112);
+    background-color: rgb(2, 34, 2);
     border-radius: 20px;
     padding-right: -20px;
 }
@@ -144,4 +147,17 @@ text-align: center;
     font-weight: bolder;
     background-color: chartreuse;
     
+}
+#colorid{
+    border: rgb(24, 1, 23) solid;
+    height: 50px;
+    width: 100px;
+}
+#selectcolor{
+    border: darkgoldenrod solid;
+    width: 400px;
+    vertical-align: middle;
+    align-content: center;
+    background-color:rgb(202, 11, 17) ;
+    border-radius: 25px;
 }

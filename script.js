@@ -72,17 +72,16 @@ function previewimage(event, inputId, parentId) {
     divPreview.appendChild(inputimage);
     console.log(divPreview)
     if (inputId == "backgroundImage" ) {
-         editingImage("seconImgPadding","padding");
+         editingImage("seconImgPadding","Padding");
     setTimeout(() => {
         editingImage("seconImgHeight","Height");
-    }, 300);
+    }, 400);
     setTimeout(() => {
         editingImage("seconImgWidth","Width");
-    }, 600);
+    }, 1000);
 
 
     console.log(outidlist);
-    secondImageEditing.disabled = true;
     }
 }
 
@@ -146,37 +145,46 @@ function editingImage(paddingId,labelIds) {
     
     var padslider = document.createElement("input");
     var labels = document.createElement("label");
-    console.log(labelIds);
     console.log(labels);
-    var labelIds ;
+    var labelIds
+    console.log(labelIds);
     var paddingId
-    var sdimage = document.getElementById("backgroundImage")
-    padslider.setAttribute("min", "0");
-    padslider.setAttribute("max", "600")
     labels.id = labelIds;
+    labels.classList ="col-3 button"
+   var sdimage = document.getElementById("backgroundImage")
+   if (paddingId =="seconImgPadding") {
+    padslider.setAttribute("max", "300")
+   } else {
+    padslider.setAttribute("max", "600")
+   }
+    padslider.setAttribute("min", "0");
+    
+    padslider.classList ="col-6"
     padslider.id = paddingId;
     //    padslider.setAttribute('onchange',"changedim(sdimage,`heightd`,`widthd`,`paddingg`)")
     console.log(paddingId);
     padslider.type = "range"
     console.log(padslider);
+    labels.innerHTML = labelIds;
     var inputField = document.getElementById('secondImage');
+    inputField.appendChild(labels);
     inputField.appendChild(padslider);
     padslider.addEventListener("change", function () { changedim(sdimage, `seconImgHeight`, `seconImgWidth`, `seconImgPadding`) })
    }
-function editingImages() {
-    editingImage("seconImgPadding");
-    setTimeout(() => {
-        editingImage("seconImgHeight");
-    }, 300);
-    setTimeout(() => {
-        editingImage("seconImgWidth");
-    }, 600);
+// function editingImages() {
+//     editingImage("seconImgPadding");
+//     setTimeout(() => {
+//         editingImage("seconImgHeight");
+//     }, 300);
+//     setTimeout(() => {
+//         editingImage("seconImgWidth");
+//     }, 600);
 
 
-    console.log(outidlist);
-    secondImageEditing.disabled = true;
+//     console.log(outidlist);
+//     secondImageEditing.disabled = true;
 
-}
+// }
 
 function addClass() {
     imageMerge = document.getElementById("imageMerge");
