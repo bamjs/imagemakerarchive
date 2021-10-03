@@ -31,75 +31,75 @@
 
 
 <body>
-<div class="header" id="header">
-   <h1>Image Editor</h1> 
-</div>
-    <div class="container">
-        <div class="container inputField">
-            <div id="firstHeader" class="row">
-                <div class="textinput col-6" id="inputForm">
-                    <input type="text" id="firstInput" class="inputFieldBtn" placeholder="Enter Text Here "><br>
-                </div>
-                <div class=" col-5"><button type="button" id="createinput" class="button"
-                        onclick="createNewInput()">Click Here To Add New
-                        Form
-                        +</button></div>
-            </div>
+    <div class="header" id="header">
+        <h1>Image Editor</h1>
+    </div>
 
-            <div id="oneImage" class="container">
-                <input type="file" name="inpimage" id="inpimage" accept="image/*" class="button row"
-                    onchange="previewimage(event,'inputimage','imagePreview')">
-                <label for="padding" class="col-3 button">Padding</label>
-                <input type="range" min="30" max="300" id="paddingid" class="col-6"
-                    onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
-                <label for="width" class="col-3 button">Width</label>
-                <input type="range" min="30" max="600" id="widthid" class="col-6"
-                    onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
-                <label for="height" class="col-3 button">Height</label>
-                <input type="range" min="30" max="600" id="heightid" class="col-6"
-                    onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
+    <div class=" inputField">
+        <div id="firstHeader" class="row">
+            <div class="textinput col-6" id="inputForm">
+                <input type="text" id="firstInput" class="inputFieldBtn" placeholder="Enter Text Here "><br>
             </div>
+            <div class=" col-5"><button type="button" id="createinput" class="button" onclick="createNewInput()">Click
+                    Here To Add New
+                    Form
+                    +</button></div>
+        </div>
 
-            <div id="secondImage" class="container">
-                <input type="file" name="bgimage" id="bgimage" accept="image/*" class="button"
-                    onchange="previewimage(event,'backgroundImage','backgroundImg')">
-            </div>
+        <div id="oneImage" class="container">
+            <input type="file" name="inpimage" id="inpimage" accept="image/*" class="button row"
+                onchange="previewimage(event,'inputimage','imagePreview')">
+            <label for="padding" class="col-3 button">Padding</label>
+            <input type="range" min="30" max="300" id="paddingid" class="col-6"
+                onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
+            <label for="width" class="col-3 button">Width</label>
+            <input type="range" min="30" max="600" id="widthid" class="col-6"
+                onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
+            <label for="height" class="col-3 button">Height</label>
+            <input type="range" min="30" max="600" id="heightid" class="col-6"
+                onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
+        </div>
 
-            </ul>
-            <div class="container" id="workingOut">
-                
-               
-                    <button onclick="preview()" class="button ">Preview Image</button>
-                    <!-- <button onclick="editingImages()" class="button" id="secondImageEditing"> second image</button> -->
-                    <button id="makebackground" class="button" onclick="makeBackGround()">Add Background
-                    </button>
-                    <button id="imageBeside" onclick="addClass()" class="button">Merge Images</button>
-                    <div id="selectcolor">
-                    <label for="color" class="button ">Select background Color</label>
-                    <input type="color" id="colorid">
-                </div>
-             
-            </div>
-            <div class="row" id="getOutput">
-                <button onclick="editing()" class="button">Make Changes</button>
-                <button onclick="saveas()" class="button">Download </button>
+        <div id="secondImage" class="container">
+            <input type="file" name="bgimage" id="bgimage" accept="image/*" class="button"
+                onchange="previewimage(event,'backgroundImage','backgroundImg')">
+        </div>
+
+        </ul>
+        <div class="container" id="workingOut">
+
+
+            <button onclick="preview()" class="button ">Preview Image</button>
+            <!-- <button onclick="editingImages()" class="button" id="secondImageEditing"> second image</button> -->
+            <button id="makebackground" class="button" onclick="makeBackGround()">Add Background
+            </button>
+            <button id="imageBeside" onclick="addClass()" class="button">Merge Images</button>
+            <div id="selectcolor">
+                <label for="color" class="button ">Select background Color</label>
+                <input type="color" id="colorid">
             </div>
 
         </div>
-             <div class="output1 container " id="divPreview">
-            <div id="imageMerge">
-                <div id="imagePreview"><img src="" alt="" id="inputimage"></div>
-                <div id="backgroundImg"><img src="" alt="" id="backgroundImage" class="Background_image"></div>
-            </div>
-            <ul id="outputList" style="list-style-type: none;">
-                <li>
-                    <p id="firstOutput" class="">vzcvxbxvnnxnx</p>
-                </li>
-            </ul>
+        <div class="row" id="getOutput">
+            <button onclick="editing()" class="button">Make Changes</button>
+            <button onclick="saveas()" class="button">Download </button>
         </div>
-        <img src="" id="convertedImage" alt="">
 
     </div>
+    <div class="output1 " id="divPreview">
+        <div id="imageMerge">
+            <div id="imagePreview"><img src="" alt="" id="inputimage"></div>
+            <div id="backgroundImg"><img src="" alt="" id="backgroundImage" class="Background_image"></div>
+        </div>
+        <ul id="outputList" style="list-style-type: none;">
+            <li>
+                <p id="firstOutput" class=""></p>
+            </li>
+        </ul>
+        <img src="" id="convertedImage" alt="">
+    </div>
+    
+
     </div>
     </div>
 </body>

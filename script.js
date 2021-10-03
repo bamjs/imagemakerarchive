@@ -28,6 +28,8 @@ function saveas() {
     // domtoimage.toBlob(document.getElementById('divPreview')).then(function (blob) {
     //     window.saveAs(blob, "platoimage.png")
     // });
+document.getElementById("divPreview").style.width=1080+"px";
+document.getElementById("divPreview").style.height=1080+"px";
 
     html2canvas(document.querySelector("#divPreview")).then(canvas => {
         document.body.appendChild(canvas)
@@ -47,6 +49,8 @@ function saveas() {
             document.removeChild(a);
 
         }
+        document.getElementById("divPreview").style.width=720+"px";
+document.getElementById("divPreview").style.height=720+"px";
     });
 
 
@@ -55,6 +59,7 @@ function preview() {
     html2canvas(document.querySelector("#divPreview")).then(canvas => {
         document.body.appendChild(canvas)
         console.log(canvas);
+        
     });
 }
 //     }
@@ -153,11 +158,13 @@ function editingImage(paddingId,labelIds) {
     labels.classList ="col-3 button"
    var sdimage = document.getElementById("backgroundImage")
    if (paddingId =="seconImgPadding") {
-    padslider.setAttribute("max", "300")
+    padslider.setAttribute("max", "300");
+    padslider.setAttribute("min", "-30");
    } else {
-    padslider.setAttribute("max", "600")
-   }
+    padslider.setAttribute("max", "600");
     padslider.setAttribute("min", "0");
+   }
+    
     
     padslider.classList ="col-6"
     padslider.id = paddingId;
