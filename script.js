@@ -28,8 +28,8 @@ function saveas() {
     // domtoimage.toBlob(document.getElementById('divPreview')).then(function (blob) {
     //     window.saveAs(blob, "platoimage.png")
     // });
-document.getElementById("divPreview").style.width=1080+"px";
-document.getElementById("divPreview").style.height=1080+"px";
+// document.getElementById("divPreview").style.width=1080+"px";
+// document.getElementById("divPreview").style.height=1080+"px";
 
     html2canvas(document.querySelector("#divPreview")).then(canvas => {
         document.body.appendChild(canvas)
@@ -49,8 +49,8 @@ document.getElementById("divPreview").style.height=1080+"px";
             document.removeChild(a);
 
         }
-        document.getElementById("divPreview").style.width=720+"px";
-document.getElementById("divPreview").style.height=720+"px";
+//         document.getElementById("divPreview").style.width= 500 +"px";
+// document.getElementById("divPreview").style.height= 500 +"px";
     });
 
 
@@ -59,7 +59,13 @@ function preview() {
     html2canvas(document.querySelector("#divPreview")).then(canvas => {
         document.body.appendChild(canvas)
         console.log(canvas);
-        
+        //  var convertedImage = document.getElementById("convertedImage");
+        //  console.log(convertedImage);
+        //  convertedImage.style.display="block"
+        // canvas
+        // canvas.classList = "modal"
+        // canvas.style.display = "block"
+        // document.getElementById("divPreview").style.display = "none"
     });
 }
 //     }
@@ -178,20 +184,6 @@ function editingImage(paddingId,labelIds) {
     inputField.appendChild(padslider);
     padslider.addEventListener("change", function () { changedim(sdimage, `seconImgHeight`, `seconImgWidth`, `seconImgPadding`) })
    }
-// function editingImages() {
-//     editingImage("seconImgPadding");
-//     setTimeout(() => {
-//         editingImage("seconImgHeight");
-//     }, 300);
-//     setTimeout(() => {
-//         editingImage("seconImgWidth");
-//     }, 600);
-
-
-//     console.log(outidlist);
-//     secondImageEditing.disabled = true;
-
-// }
 
 function addClass() {
     imageMerge = document.getElementById("imageMerge");
