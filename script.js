@@ -106,6 +106,8 @@ function saveas() {
     // domtoimage.toBlob(document.getElementById('divPreview')).then(function (blob) {
     //     window.saveAs(blob, "platoimage.png")
     // });
+// document.getElementById("divPreview").style.width=1080+"px";
+// document.getElementById("divPreview").style.height=1080+"px";
 
     html2canvas(document.querySelector("#divPreview")).then(canvas => {
         document.body.appendChild(canvas)
