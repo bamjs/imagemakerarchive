@@ -30,24 +30,24 @@
 </head>
 
 
-<body>
-<div class="header" id="header">
-   <h1>Image Editor</h1> 
-</div>
-    <div class="container">
-        <div class="container inputField">
-            <div id="firstHeader" class="row">
-                <div class="textinput col-6" id="inputForm">
-                    <input type="text" id="firstInput" class="inputFieldBtn" placeholder="Enter Text Here "><br>
-                </div>
-                <div class=" col-5"><button type="button" id="createinput" class="button"
-                        onclick="createNewInput()">Click Here To Add New
-                        Form
-                        +</button></div>
-            </div>
+<body onload="defaultValues()">
+    <div class="header" id="header">
+        <h1>Image Editor</h1>
+    </div>
+    <div class="inputField">
 
-            <div id="oneImage" class="container">
-                <input type="file" name="inpimage" id="inpimage" accept="image/*" class="button row"
+        <div id="firstHeader" class="row">
+            <div class="textinput col-6" id="inputForm">
+                <input type="text" id="firstInput" class="inputFieldBtn" placeholder="Enter Text Here "><br>
+            </div>
+            <div class=" col-5"><button type="button" id="createinput" class="button" onclick="createNewInput()">Click
+                    Here To Add New
+                    Form
+                    +</button></div>
+        </div>
+        <div class="container">
+            <div id="oneImage" class="container row">
+                <input type="file" name="inpimage" id="inpimage" accept="image/*" class="button "
                     onchange="previewimage(event,'inputimage','imagePreview')">
                 <label for="padding" class="col-3 button">Padding</label>
                 <input type="range" min="30" max="300" id="paddingid" class="col-6"
@@ -60,48 +60,71 @@
                     onchange="changedim(inputimage,`heightid`,`widthid`,`paddingid`)">
             </div>
 
-            <div id="secondImage" class="container">
+            <div id="secondImage" class="container row">
                 <input type="file" name="bgimage" id="bgimage" accept="image/*" class="button"
-                    onchange="previewimage(event,'backgroundImage','backgroundImg')">
+                    onchange="previewimage(event,'ImgSecond','backgroundImg')">
             </div>
+            <div >
+                <input type="file" id="backgroundImage" accept="image/*" class="button" onchange="makeBackGround(event)">
+            </div>
+        </div>
+        </ul>
+        <div class="container" id="workingOut">
 
-            </ul>
-            <div class="container" id="workingOut">
-                
-               
-                    <button onclick="preview()" class="button ">Preview Image</button>
-                    <!-- <button onclick="editingImages()" class="button" id="secondImageEditing"> second image</button> -->
-                    <button id="makebackground" class="button" onclick="makeBackGround()">Add Background
-                    </button>
-                    <button id="imageBeside" onclick="addClass()" class="button">Merge Images</button>
-                    <div id="selectcolor">
-                    <label for="color" class="button ">Select background Color</label>
-                    <input type="color" id="colorid">
-                </div>
-             
-            </div>
-            <div class="row" id="getOutput">
-                <button onclick="editing()" class="button">Make Changes</button>
-                <button onclick="saveas()" class="button">Download </button>
+
+            <button onclick="preview()" class="button ">Preview Image</button>
+            <!-- <button onclick="editingImages()" class="button" id="secondImageEditing"> second image</button> -->
+            <button id="makebackground" class="button" onclick="makeBackGround()">Add Background
+            </button>
+            <button id="imageBeside" onclick="addClass()" class="button ">Merge Images</button>
+            <div id="selectcolor">
+                <label for="color" class="button btn-primary ">Select background Color</label>
+                <input type="color" id="colorid">
+                <select name="font" id="font" onchange="changeFont(this)" class="button btn-primary ">
+                    <Option value="Arial">Arial</Option>
+                    <Option value="Calibri">Calbri</Option>
+                    <Option value="Georgia">Georgia</Option>
+                    <Option value="Verdana">Verdana</Option>
+                    <Option value="Century Gothic">Century Gothic</Option>
+                    <Option value="Segoe UI">Segoe UI</Option>
+                    <Option value="Bodoni MT">Bodoni MT</Option>
+                    <Option value="Courier New">Courier New</Option>
+                    <Option value="Comic Sans MS">Comic Sans MS</Option>
+                    <Option value="Impact">Impact</Option>
+                    <Option value="Arial Black">Arial Black</Option>
+                    <Option value="Franklin Gothic Medium">Franklin Gothic Medium</Option>
+                    <Option value="Microsoft Himalaya">Microsoft Himalaya</Option>
+                    <Option value="Ramabhadra">Ramabhadra</Option>
+                </select>
+                <select name="fontSize" id="fontSize" onchange="fontsize(this)" class="btn-primary button"></select>
+                <span class="button" style="font-weight: bolder;" onclick="makebold()"
+                    class="btn-primary button">B</span>
+                <span class="button" style="font-weight: bolder;" onclick="makeitalic()"
+                    class="btn-primary button">I</span>
+                <span class="button" style="font-weight: bolder;" onclick="makeunderline()"
+                    class="btn-primary button">U</span>
+
             </div>
 
         </div>
-             <div class="output1 container " id="divPreview">
+        <div class="row" id="getOutput">
+            <button onclick="editing()" class="button">Make Changes</button>
+            <button onclick="saveas()" class="button">Download </button>
+        </div>
+    </div>
+
+    <div class="output1 container " id="divPreview" >
+        <div  >
             <div id="imageMerge">
                 <div id="imagePreview"><img src="" alt="" id="inputimage"></div>
-                <div id="backgroundImg"><img src="" alt="" id="backgroundImage" class="Background_image"></div>
+                <div id="backgroundImg"><img src="" alt="" id="ImgSecond" class="Background_image"></div>
             </div>
             <ul id="outputList" style="list-style-type: none;">
-                <li>
-                    <p id="firstOutput" class="">vzcvxbxvnnxnx</p>
-                </li>
+               <li id="firstOut"></li>
             </ul>
         </div>
-        <img src="" id="convertedImage" alt="">
-
     </div>
-    </div>
-    </div>
+    <img src="" id="convertedImage" alt="">
 </body>
 
 </html>
