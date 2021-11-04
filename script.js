@@ -23,47 +23,47 @@ function fontsize(sizeTag) {
     var divPreview = document.getElementById("divPreview")
     let sizeObj = {
         "font-size": fontvalue,
-        
+
     };
     console.log(sizeObj);
     Object.assign(divPreview.style, sizeObj)
 }
-let check=0;
+let check = 0;
 function makebold() {
-    
-    if(check%2==0){
+
+    if (check % 2 == 0) {
         divPreview.classList.add("bold")
         console.log(divPreview);
         check++;
-    }else{
+    } else {
         divPreview.classList.remove("bold");
         check--;
     }
-    
+
 }
 
 function makeitalic() {
-    if(check%2==0){
+    if (check % 2 == 0) {
         console.log(divPreview);
         divPreview.classList.add("italic");
-        
+
         check++;
-    }else{
+    } else {
         divPreview.classList.remove("italic");
         check--;
     }
 }
 function makeunderline() {
-    if(check%2==0){
+    if (check % 2 == 0) {
         console.log(divPreview);
         divPreview.classList.add("underline");
-        
+
         check++;
-    }else{
+    } else {
         divPreview.classList.remove("underline");
         check--;
     }
-    
+
 }
 
 function editing() {
@@ -106,8 +106,8 @@ function saveas() {
     // domtoimage.toBlob(document.getElementById('divPreview')).then(function (blob) {
     //     window.saveAs(blob, "platoimage.png")
     // });
-// document.getElementById("divPreview").style.width=1080+"px";
-// document.getElementById("divPreview").style.height=1080+"px";
+    // document.getElementById("divPreview").style.width=1080+"px";
+    // document.getElementById("divPreview").style.height=1080+"px";
 
     html2canvas(document.querySelector("#divPreview")).then(canvas => {
         document.body.appendChild(canvas)
@@ -125,7 +125,7 @@ function saveas() {
             a.download = "imagecan.png";
             a.click();
             document.removeChild(a);
-         }
+        }
     });
 
 
@@ -257,30 +257,24 @@ function addClass() {
 }
 
 function makeBackGround(event) {
-    var backgroundImage = document.getElementById(backgroundImage);
-    console.log(backgroundImage);
-    const reader = new FileReader;
-    console.log(event.target.files[0]);
+    window.localStorage.removeItem("image-recent");
+        const reader = new FileReader;
     reader.readAsDataURL(event.target.files[0]);
-    reader.addEventListener("load",()=>{window.localStorage.setItem("image-recent",reader.result);
-console.log(reader.result);
-(()=>{
-    var divPreview = document.getElementById("divPreview")
-    let bgobj = {
-        "background-image": `url(` + window.localStorage.getItem("image-recent") + `)`,
-        "z-index": 1
-    };
-    console.log(bgobj);
-    Object.assign(divPreview.style, bgobj)
-    console.log(divPreview);
-    
-    // Object.assign()
-    ImgSecond.style.ImgSecond = `url(` + window.localStorage.getItem("image-recent") + `)`
-})()}
+    reader.addEventListener("load", () => {
+        window.localStorage.setItem("image-recent", reader.result);
+        console.log(reader.result);
+        (() => {
+            var divPreview = document.getElementById("divPreview")
+            let bgobj = {
+                "background-image": `url(` + window.localStorage.getItem("image-recent") + `)`,
+                "z-index": 1
+            };
+            console.log(bgobj);
+            Object.assign(divPreview.style, bgobj)
+            console.log(divPreview);
+        })()
+    }
     )
-    // ImgSecond.src= window.localStorage.getItem("image-recent")
-    
-    
 }
 window.onunload = () => {
     window.localStorage.clear();
