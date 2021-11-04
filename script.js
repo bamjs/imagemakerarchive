@@ -21,12 +21,17 @@ function fontsize(sizeTag) {
     var fontvalue = sizeTag.options[sizeTag.selectedIndex].text;
     console.log(fontvalue);
     var divPreview = document.getElementById("divPreview")
-    let sizeObj = {
-        "font-size": fontvalue,
-
-    };
-    console.log(sizeObj);
+    let sizeObj = {"font-size": fontvalue}
     Object.assign(divPreview.style, sizeObj)
+}
+function addlistStyle(listStyles) {
+    console.log(listStyles.options[listStyles.selectedIndex].text);
+    var listValue = listStyles.options[listStyles.selectedIndex].text;
+    console.log(listValue);
+    var outputList = document.getElementById("outputList")
+    let listObj = {"list-style-type" :listValue};
+    console.log(listObj);
+    Object.assign(outputList.style, listObj)
 }
 let check = 0;
 function makebold() {
@@ -38,6 +43,7 @@ function makebold() {
     } else {
         divPreview.classList.remove("bold");
         check--;
+        console.log(divPreview);
     }
 
 }
@@ -51,6 +57,7 @@ function makeitalic() {
     } else {
         divPreview.classList.remove("italic");
         check--;
+        console.log(divPreview);
     }
 }
 function makeunderline() {
@@ -65,7 +72,10 @@ function makeunderline() {
     }
 
 }
+function listStyle(){
+    var lStyle = document.getElementById("");
 
+}
 function editing() {
     var rama;
     rama = document.getElementById('firstInput').value;
@@ -74,7 +84,6 @@ function editing() {
     var bgcolors = document.getElementById("colorid").value;
     console.log(bgcolors);
     var listStyleChange = document.getElementById('outputList');
-    listStyleChange.removeAttribute("list-style-type");
     listStyleChange.style = "list-style-type :circle";
     console.log(listStyleChange);
 
@@ -177,6 +186,7 @@ function createNewInput() {
     idOut = "idOut" + idno;
     idNum = "id" + idno;
     newInput.setAttribute("id", idNum);
+    newInput.setAttribute("oninput","editing()")
     console.log(newInput);
     newOutput.setAttribute("id", idOut);
     console.log(newOutput);

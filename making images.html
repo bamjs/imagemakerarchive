@@ -38,7 +38,7 @@
 
         <div id="firstHeader" class="row">
             <div class="textinput col-6" id="inputForm">
-                <input type="text" id="firstInput" class="inputFieldBtn" placeholder="Enter Text Here "><br>
+                <input type="text" id="firstInput" class="inputFieldBtn" oninput="editing()"  placeholder="Enter Text Here " ><br>
             </div>
             <div class=" col-5"><button type="button" id="createinput" class="button" onclick="createNewInput()">Click
                     Here To Add New
@@ -64,8 +64,9 @@
                 <input type="file" name="bgimage" id="bgimage" accept="image/*" class="button"
                     onchange="previewimage(event,'ImgSecond','backgroundImg')">
             </div>
-            <div >
-                <input type="file" id="backgroundImage" accept="image/*" class="button" onchange="makeBackGround(event)">
+            <div>
+                <input type="file" id="backgroundImage" accept="image/*" class="button"
+                    onchange="makeBackGround(event)">
             </div>
         </div>
         </ul>
@@ -79,7 +80,7 @@
             <button id="imageBeside" onclick="addClass()" class="button ">Merge Images</button>
             <div id="selectcolor">
                 <label for="color" class="button btn-primary ">Select background Color</label>
-                <input type="color" id="colorid">
+                <input type="color" id="colorid" oninput="editing()">
                 <select name="font" id="font" onchange="changeFont(this)" class="button btn-primary ">
                     <Option value="Arial">Arial</Option>
                     <Option value="Calibri">Calbri</Option>
@@ -98,12 +99,17 @@
                 </select>
                 <select name="fontSize" id="fontSize" onchange="fontsize(this)" class="btn-primary button"></select>
                 <span class="button" style="font-weight: bolder;" onclick="makebold()"
-                    class="btn-primary button">B</span>
+                    class="button btn-primary">B</span>
                 <span class="button" style="font-weight: bolder;" onclick="makeitalic()"
-                    class="btn-primary button">I</span>
+                    class="button btn-primary">I</span>
                 <span class="button" style="font-weight: bolder;" onclick="makeunderline()"
-                    class="btn-primary button">U</span>
-
+                    class="button btn-primary">U</span>
+                <select name="liststyle" id="liststyle" class="button btn-primary" onchange="addlistStyle(this)">
+                    <option value="circle">circle</option>
+                    <option value="square">square</option>
+                    <option value="disc">disc</option>
+                    <option value="none">none</option>
+                </select>
             </div>
 
         </div>
@@ -113,14 +119,14 @@
         </div>
     </div>
 
-    <div class="output1 container " id="divPreview" >
-        <div  >
+    <div class="output1 container " id="divPreview">
+        <div>
             <div id="imageMerge">
                 <div id="imagePreview"><img src="" alt="" id="inputimage"></div>
                 <div id="backgroundImg"><img src="" alt="" id="ImgSecond" class="Background_image"></div>
             </div>
-            <ul id="outputList" style="list-style-type: none;">
-               <li id="firstOut"></li>
+            <ul id="outputList">
+                <li id="firstOut"></li>
             </ul>
         </div>
     </div>
