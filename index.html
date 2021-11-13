@@ -38,7 +38,8 @@
 
         <div id="firstHeader" class="row">
             <div class="textinput col-6" id="inputForm">
-                <input type="text" id="firstInput" class="inputFieldBtn" oninput="editing()"  placeholder="Enter Text Here " ><br>
+                <input type="text" id="firstInput" class="inputFieldBtn" oninput="editing()"
+                    placeholder="Enter Text Here "><br>
             </div>
             <div class=" col-5"><button type="button" id="createinput" class="button" onclick="createNewInput()">Click
                     Here To Add New
@@ -115,7 +116,9 @@
         </div>
         <div class="row" id="getOutput">
             <button onclick="editing()" class="button">Make Changes</button>
-            <button onclick="saveas()" class="button">Download </button>
+            <button onclick="saveas()" class="button" id="download" class="btn btn-primary" data-toggle="modal"
+                data-target="#outputModal">Download </button>
+
         </div>
     </div>
 
@@ -130,7 +133,17 @@
             </ul>
         </div>
     </div>
-    <img src="" id="convertedImage" alt="">
+    <div class="modal" id="outputModal" tabindex="-1" aria-labelledBy="outputImage" aria-hidden="true">
+        <div class="modal-dailog" role="document">
+            <div class="modal-content" id="outModalPosition">
+                <img src="" id="convertedImage" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="Download" class="btn btn-primary" onclick="Download()">Download</button>
+                <button id='closeModal' type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+const { link } = require("fs");
 
 function defaultValues() {
 
@@ -76,6 +77,7 @@ function listStyle(){
     var lStyle = document.getElementById("");
 
 }
+
 function editing() {
     var rama;
     rama = document.getElementById('firstInput').value;
@@ -108,9 +110,17 @@ function changeFont(selectTag) {
     preview = document.getElementById("divPreview");
     var listvalue = selectTag.options[selectTag.selectedIndex].text;
     FontObj = { "font-family": listvalue }
+    console.log(CSSStyleSheet);
     Object.assign(preview.style, FontObj);
     console.log(preview);
 }
+$(function () {
+    $('#closeModal').on('click', function () {
+        $('#outputModal').hide();
+    })
+})
+var convertedImage=document.getElementById("convertedImage");
+
 function saveas() {
     // domtoimage.toBlob(document.getElementById('divPreview')).then(function (blob) {
     //     window.saveAs(blob, "platoimage.png")
@@ -128,17 +138,26 @@ function saveas() {
         if (window.navigator.msSaveBlob) {
             window.navigator.msSaveBlob(mycanvas.msToBlob(), "imagecan.png")
         } else {
+            convertedImage =document.getElementById("convertedImage")
             const a = document.createElement("a");
             document.body.appendChild(a);
-            a.href = mycanvas.toDataURL();
-            a.download = "imagecan.png";
-            a.click();
-            document.removeChild(a);
+            convertedImage.src = mycanvas.toDataURL();
+          //  var link = a.href;
+          convertedImage.download = "imagecan.png";
+          //  a.click();
+            document.body.removeChild(a);
+        //    window.localStorage.setItem("imageurl",link);
+        //     console.log(link);
+        //     $('#download').on('click',function(){
+        //         $('#convertedImage').src=localStorage.getItem("imageurl")
+        //     }
+        document.body.removeChild(canvas);
         }
     });
 
 
 }
+console.log(link);
 function preview() {
     html2canvas(document.querySelector("#divPreview")).then(canvas => {
         document.body.appendChild(canvas)

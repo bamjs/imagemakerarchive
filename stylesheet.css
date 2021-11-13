@@ -13,7 +13,9 @@ Option{
 }
 .underline{
     text-decoration: underline;
+    
 }
+
 .output1{
     background-color: rgb(152, 170, 32);
     /* min-width: 500px;
